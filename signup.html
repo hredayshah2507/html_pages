@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login & Signup Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 380px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .form-container {
+      padding: 40px;
+      transition: transform 0.6s ease-in-out;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      font-size: 15px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #667eea;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #5a67d8;
+    }
+
+    .toggle-link {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .toggle-link a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* Toggle logic */
+    #signup-form {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 100%;
+      height: 100%;
+      transition: all 0.6s ease;
+    }
+
+    #toggle:checked ~ #signup-form {
+      left: 0;
+    }
+
+    #toggle:checked ~ #login-form {
+      left: -100%;
+    }
+
+    input[type="checkbox"] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <input type="checkbox" id="toggle">
+
+    <!-- Login Form -->
+    <div class="form-container" id="login-form">
+      <h2>Login</h2>
+      <form>
+        <input type="text" placeholder="Username" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+        <div class="toggle-link">
+          Don’t have an account? <label for="toggle"><a href="#">Sign up</a></label>
+        </div>
+      </form>
+    </div>
+
+    <!-- Signup Form -->
+    <div class="form-container" id="signup-form">
+      <h2>Sign Up</h2>
+      <form>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Sign Up</button>
+        <div class="toggle-link">
+          Already have an account? <label for="toggle"><a href="#">Login</a></label>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
